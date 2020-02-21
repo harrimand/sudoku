@@ -1,5 +1,6 @@
 import numpy as np
 
+#------------------------------------------------------------------------------
 def possible(y, x, n):
     global grid
     if n in [grid[y][c] for c in range(9)]:
@@ -8,6 +9,9 @@ def possible(y, x, n):
         return False
     return n not in [[grid[r + y//3*3][c + x//3*3] for c in range(3)] for r in range(3)]
 
+#------------------------------------------------------------------------------
+# This function is not being used.
+# Replaced by previous function using list comprehension.
 def possible2(y, x, n):
     global grid
     for i in range(0, 9):
@@ -25,6 +29,8 @@ def possible2(y, x, n):
                 return False
     return True
 
+#------------------------------------------------------------------------------
+# Recursive function
 def solve():
     global grid
     for y in range(9):
@@ -38,6 +44,8 @@ def solve():
                 return
     print(np.matrix(grid))
     input("more?")
+
+#------------------------------------------------------------------------------
 
 '''
 grid = [[5,3,0,0,7,0,0,0,0],
